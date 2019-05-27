@@ -8,7 +8,7 @@ def parse_arguments():
     parser.add_argument("--url", dest='url', help='URL of analysis-site', type=str)
     parser.add_argument("--image_path", dest='image_path', help='Image path to send as request', type=str)
     parser.add_argument("--modules", dest='modules', help='names of analysis-module', type=str)
-    parser.add_argument("--numofmessages", dest='num_of_messages', help="number of request messages to send", type=int)
+    parser.add_argument("--num_of_messages", dest='num_of_messages', help="number of request messages to send", type=int)
 
     return parser
 
