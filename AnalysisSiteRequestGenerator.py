@@ -1,5 +1,6 @@
 import requests
 import json
+from utils import *
 
 class AnalysisSiteRequestGenerator :
     def __init__(self):
@@ -18,6 +19,7 @@ class AnalysisSiteRequestGenerator :
     def get_request_attr(self):
         return self.__url, self.__json_data, self.__json_file
 
+    @profile_function_time
     def send_request_message(self):
         try :
             response = requests.post(url=self.__url, data=self.__json_data, files=self.__json_file)
