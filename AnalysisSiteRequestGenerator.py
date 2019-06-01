@@ -1,7 +1,6 @@
 import requests
 import json
 
-
 class AnalysisSiteRequestGenerator :
     def __init__(self):
         self.__url = None
@@ -21,8 +20,8 @@ class AnalysisSiteRequestGenerator :
 
     def send_request_message(self):
         try :
-            request = requests.post(url=self.__url, data=self.__json_data, files=self.__json_file)
-            response = json.loads(request.content)
+            response = requests.post(url=self.__url, data=self.__json_data, files=self.__json_file)
+            response = json.loads(response.content)
         except :
             response = {}
 
