@@ -16,13 +16,14 @@ if __name__ == '__main__':
     try :
         args = parse_arguments().parse_args()
 
-        b_image = load_binary_image(args.image_path)
         request_generator = AnalysisSiteRequestGenerator()
-        request_generator.set_request_attr(url=args.url, image=b_image, modules=None)
+
         num_of_messages = args.num_of_messages
 
         for i in range(0, num_of_messages) :
-            response, time = profile_function_time(request_generator.send_request_message())
+            b_image = load_binary_image(args.image_path)
+            request_generator.set_request_attr(url=args.url, image=b_image, modules=args.modules)
+            response = request_generator.send_request_message()
 
     except :
         parse_arguments().print_help()
